@@ -1,0 +1,87 @@
+-p optional flag in run command
+
+-p stands for publish port.It maps a port on your host machine to a port inside the container.
+In simple words:
+-p allows users outside the container to access an application running inside the container.
+By default:
+Containers run in an isolated network
+Applications inside containers are NOT accessible from the host/browser
+So if a web server is running inside a container, you must expose it using -p.
+
+Syntax of –p 
+
+
+docker run -p <HOST_PORT>:<CONTAINER_PORT> IMAGE
+
+ex-1
+
+Now try to Run Nginx with -p
+docker run -p 8080:80 nginx
+
+What happens internally?
+
+Browser → localhost:8080 → Docker Host → Container:80 → Nginx
+
+
+
+docker run -d -p 3307:3306 --name mysql-test –e MYSQL_ROOT_PASSWORD=root123  mysql
+
+ docker exec -it mysql-test bash
+
+  mysql -h 127.0.0.1 -P 3306 -u root –p
+
+
+7 What’s running?
+
+To  lists all the docker containers are running with container details..
+
+$ docker ps
+
+TAXK:
+
+
+
+Run Ubuntu container
+Pass -e COLLEGE=CSE
+Show echo $COLLEGE
+Stop container  then check what happened
+
+To list all the docker containers running/exited/stopped with container details
+
+$ docker ps -a
+
+Access the docker container and run commands inside the container in bash 
+
+  $ docker  exec  -it  09ca6feb6efc bash/env
+09ca6feb6efc --- it is Id of the container 
+
+
+
+Remove the docker container with container id mentioned in the command.
+                  $ docker  rm  9b6343d3b5a0 
+Run the below command to check if the container got removed or not.
+                       $ docker ps -a
+IMAGE REMOVE 
+
+Remove the docker image with the docker image id mentioned in the command
+          $ docker rmi fce289e99eb9
+
+
+
+
+
+
+
+
+
+
+..COND
+
+To remove the image forcefully 
+
+$ docker rmi –f  <image id>
+
+docker rmi -f 92fa43a2ff60503fdf250
+Untagged: httpd:latest
+Untagged: httpd@sha256:7765977cf2063fec486b63ddea574faf8fbed285f2b17020fa7ef70a4926cdec
+Deleted: sha256:92fa43a2ff60503fdf250ef0a16d4170aa2a47c4b5a60d427724283543a8792a
