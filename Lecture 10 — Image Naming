@@ -1,0 +1,69 @@
+Images follow a standard naming
+ format:<registry>/<namespace>/<image>:<tag>
+
+Example:docker.io/manpreet/webapp:v1
+
+
+Image Distribution Process
+
+Image distribution refers to how images move from developers to production systems.
+
+Distribution Flow:
+Developer builds an image locally
+Image is pushed to a registry
+Registry stores the image securely
+Servers pull the image when required
+Containers are created from the image
+
+Push and Pull Operations
+
+Push Operation
+-Uploads image layers from local system to registry
+-Requires authentication
+-Only new layers are pushed
+Pull Operation
+-Downloads image layers from registry
+-Uses caching to avoid re-downloading existing layers
+-Faster on repeated deployments
+
+Role of Image Registries in CI/CD Pipelines
+
+In modern DevOps pipelines:
+-Code is committed to Git
+-CI system builds the container image
+-Image is pushed to registry
+-CD system pulls the image
+-Application is deployed automatically
+
+In Actual, Registry acts as the bridge between CI and CD.
+
+
+QUIZ
+
+1.What is the primary purpose of an image registry?
+A. To execute containers
+B. To store and distribute container images(ANS)
+C. To build container images
+D. To monitor container performance
+
+2. Which component of an image name represents the version of the image?
+A. Registry
+B. Namespace
+C. Image name
+D. Tag(ANS)
+
+3. Which type of image registry is typically used in enterprise environments?
+A.Public registry
+B. Open registry
+C. Private registry(ANS)
+D. Anonymous registry
+
+4. In CI/CD pipelines, the image registry mainly acts as:
+A. Source code repository
+B. Testing environment
+C. Bridge between CI and CD(ANS)
+D. Container runtime
+
+
+
+
