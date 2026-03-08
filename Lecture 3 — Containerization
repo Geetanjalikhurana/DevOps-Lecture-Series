@@ -1,0 +1,14 @@
+Containerization is a lightweight alternative to virtualization. Instead of creating full virtual machines. 
+Containers package an application and its dependencies together so it runs consistently on any system. 
+Containers share the host operating system, making them faster, smaller, and more efficient than VMs.
+Example: A container can run a web server, database, or microservice without needing a full OS installation.
+A container runtime is the software responsible for creating, starting, and stopping containers.
+It takes a container image and turns it into a running container. 
+Without a runtime, container images cannot run.
+
+Examples of runtimes:
+Docker Engine
+containerd
+CRI-O
+
+These tools manage the container lifecycle and interact with the operating system.
