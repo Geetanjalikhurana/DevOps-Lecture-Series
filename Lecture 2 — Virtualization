@@ -1,0 +1,17 @@
+Virtualization divides one physical server into multiple virtual machines using a hypervisor.
+
+Components
+-Physical server
+-Hypervisor
+-Virtual machines
+-Guest OS
+
+Advantages
+-Better resource utilization
+-Isolation
+-Disaster recovery
+
+Drawbacks
+-High resource usage
+-Slow startup
+-Higher infrastructure cost
