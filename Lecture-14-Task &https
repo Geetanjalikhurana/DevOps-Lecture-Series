@@ -1,0 +1,44 @@
+A student wants to practice Linux commands inside Docker. Run an Ubuntu container in interactive mode using bash and exit safely after execution.
+Write the commands used to create and access the container.
+
+docker run -it ubuntu bash
+exit
+
+You need to troubleshoot a running container by entering its terminal and checking logs.Write commands to:
+Open bash inside container
+View logs
+Show running processes
+docker exec -it <container_id> bash
+docker logs <container_id>
+docker top <container_id>
+
+
+Create a custom Docker network named mynetwork and verify its configuration.
+Write commands to create, list, and inspect the network.
+
+docker network create mynetwork
+docker network ls
+docker network inspect mynetwork
+
+You are a DevOps trainee and need to deploy the Apache HTTP Server (httpd) using Docker for testing a static website.
+Pull the Apache server image from Docker Hub, create a container named apache-web, and run it in detached mode. 
+Map port 8081 on the host machine to port 80 inside the container so that the website can be accessed through a browser.
+Tasks:
+Pull the Apache (httpd) Docker image.
+Verify that the image is successfully downloaded.
+Run the container with the specified name and port mapping.
+Check the list of running containers.
+Access the Apache web server using a browser.
+
+
+docker pull httpd
+docker images
+docker run -d --name apache-web -p 8081:80 httpd
+docker ps
+docker logs apache-web
+docker stop apache-web
+docker rm apache-web
+
+
+
+
