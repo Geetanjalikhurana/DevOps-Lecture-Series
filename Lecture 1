@@ -1,0 +1,23 @@
+Containers are lightweight virtualization technology used to package applications and their dependencies together.
+
+Goals
+-Faster deployment
+-Continuous Integration & Deployment
+-Automation
+-Collaboration between teams
+
+Key Practices
+-CI/CD
+-Containerization
+-Monitoring
+-Infrastructure as Code
+Advantages:
+- Portability
+- Isolation
+- Faster deployment
+- Efficient resource usage
+
+Examples:
+Docker
+Kubernetes
+Podman
