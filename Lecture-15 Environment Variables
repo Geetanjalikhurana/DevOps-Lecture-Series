@@ -1,0 +1,89 @@
+Environment variables are key–value pairs used by applications to:
+Read configuration
+Store secrets (usernames, passwords)
+Control application behavior without changing the image
+Environment variables allow us to configure containers dynamically.
+
+Need  of environment variables in Docker
+
+Without -e:
+Configuration must be hard-coded in the image 
+Need to rebuild image for every change 
+
+With -e:
+Same image → different behavior 
+Secure & flexible configuration 
+Widely used in microservices & cloud deployments 
+
+Example : Setting Environment:
+
+docker run -e MY_VAR=value httpd env
+
+This command sets an environment variable ‘MY_VAR’ to the value “value” and runs a new container from the ‘httpd’ image. 
+
+   The ‘env’ command is executed to display the list of environment variables in the container.
+
+
+exemple:
+
+2nd Example: Run a container from Image and display the variable name inside it.
+
+    docker run -it -e MY_NAME=geetanjali ubuntu bash
+
+It will open the container and you can check the env variable inside it as:
+
+Echo $ MY_NAME
+
+
+Kindly note :
+MY_NAME is created inside the container
+Host system is not affected
+
+Multiple Environment Variables:
+
+docker run -e APP_ENV=production -e APP_VERSION=1.0 nginx
+
+
+Same for MySQL Container
+
+docker run -d \
+  -e MYSQL_ROOT_PASSWORD=root123 \
+  -e MYSQL_DATABASE=college \
+  -e MYSQL_USER=admin \
+  -e MYSQL_PASSWORD=admin123 \
+  mysql:8
+
+Without these variables, MySQL container will fail to start
+
+Next is : Passing Environment Variable from Host System
+
+Ex#1: 
+Step 1: Set variable on host
+ export APP_PORT=8080
+
+Step 2: 
+
+docker run -e APP_PORT nginx env 
+
+
+Another way : Using --env-file (Clean & Professional Way)
+
+
+Create .env file
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=secret
+
+Then Run container
+docker run --env-file .env myapp
+
+4th Example
+
+$ docker run -it -d httpd
+Here :
+   -it  flag enables interactive mode, so you can interact with the container’s command line
+The -d flag runs the container in the background and the httpd argument specifies the image name to use for the container. This command will pull the httpd image from Docker Hub if it is not already present on your local machine, create a container based on that image, and start it in the background.
+
+
+
