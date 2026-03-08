@@ -1,0 +1,89 @@
+Create Project Folder
+
+mkdir nginx-app
+cd nginx-app
+
+
+Create Web Page
+Create index.html
+
+<h1>Welcome to My Custom Docker Nginx App</h1>
+
+Create Dockerfile
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+
+Build Image
+
+docker build -t custom-nginx:v1 .
+
+Run Container
+
+docker run -d -p 8080:80 --name nginx-container custom-nginx:v1
+
+OPEN PORT 
+http://localhost:8080
+
+
+Example:
+
+mkdir node-app
+cd node-app
+
+Create Node App
+
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Docker Node App Running!");
+});
+
+app.listen(3000);
+
+
+Create package.json
+
+{
+ "name": "node-docker-app",
+ "version": "1.0.0",
+ "main": "app.js",
+ "dependencies": {
+  "express": "^4.18.2"
+ }
+}
+
+
+Dockerfile
+
+FROM node:18-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY app.js .
+EXPOSE 3000
+CMD ["node","app.js"]
+
+
+
+Build Image
+
+docker build -t node-demo:v1 .
+
+
+Run Container
+
+docker run -d -p 3000:3000 --name node-container node-demo:v1
+
+
+open browser
+http://localhost:3000
+output 
+Docker Node App Running!
+
+
+
+
+
+
