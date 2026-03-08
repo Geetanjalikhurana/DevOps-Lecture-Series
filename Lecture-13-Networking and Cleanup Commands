@@ -1,0 +1,15 @@
+Network Commands
+
+docker network ls-Lists available Docker networks.
+docker network create mynetwork-Creates a custom network.
+docker network inspect mynetwork-Shows network details.
+docker network rm mynetwork-Deletes a network.
+
+Cleanup Commands
+
+docker stop $(docker ps -aq)-Stops all containers.
+docker rm $(docker ps -aq)-Removes all containers.
+docker rmi $(docker images -q)-Deletes all images.
+docker system prune –a-Cleans unused containers, networks, images.
+
+
