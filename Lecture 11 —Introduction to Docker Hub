@@ -1,0 +1,37 @@
+ Centralized repository for Docker images
+
+ Features:
+ -Public and private repositories
+ -Official images
+ -Automated builds
+ -Importance in DevOps
+
+Docker Architecture:
+
+Key Components:
+  - Docker Client
+  - Docker Daemon
+  - Docker Images
+  - Containers
+  - Docker Registry (Docker Hub)
+
+Docker Life Cycle:
+
+Stages:
+  - Build: Create an image
+  - Ship: Share images via Docker Hub
+  - Run: Start containers
+
+ Container states:
+  - Created
+  - Running
+  - Paused
+  - Stopped
+
+Conclusion:
+Key takeaways:
+  - Docker simplifies software deployment
+  - Docker Hub enhances collaboration
+  - Docker’s architecture and lifecycle enable efficient workflows
+  - Hyper-V integration broadens Docker’s capabilities
+
