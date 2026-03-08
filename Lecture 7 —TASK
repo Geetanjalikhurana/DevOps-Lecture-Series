@@ -1,0 +1,28 @@
+Task 1: A company uses containers for microservices. One faulty container crashes the host due to high memory usage.
+
+Questions:
+1. Which container feature was misconfigured or missing?
+2. Which kernel mechanism should have prevented this?
+3. Would namespaces alone solve this issue? Why?
+
+ANSWERS
+
+1. The missing feature was memory resource limits in the container configuration.
+2. The Linux kernel mechanism that should prevent this is cgroups (Control Groups).
+3. No, namespaces alone cannot solve the issue because they only provide isolation, not resource limiting. Memory control requires cgroups.
+
+Task 2: A server is running three containers:
+Container A runs a CPU-intensive task
+Container B runs a web server
+Container C runs a database
+
+Questions:
+1. Which Linux feature prevents Container A from consuming all CPU?
+2. Which feature ensures Container B cannot see processes of Container C?
+3. Which namespace allows all three containers to use port 80 internally?
+
+ANSWERS
+
+1. cgroups (CPU controller) prevents Container A from consuming all CPU.
+2. PID namespace ensures Container B cannot see processes of Container C.
+3. Network namespace allows all containers to use port 80 internally.
