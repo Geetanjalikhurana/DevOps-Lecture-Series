@@ -1,0 +1,43 @@
+A container image is:
+A read-only blueprint
+Contains:
+-Base OS (minimal)
+-Application code
+-Libraries & dependencies
+-Runtime
+-Configuration
+
+Images are immutable – once built, they do not change.
+
+Example:
+
+python:3.11-slim is the image 
+
+This image already includes:
+Linux OS
+Python 3.11
+Standard Python libraries
+
+
+Image Layers:
+
+Each image is built as a stack of layers.
+        Characteristics of Layers
+Each instruction in a Dockerfile = one layer
+Layers are:
+-Immutable
+-Cached
+-Reused across images
+
+Benefits of Layered Images:
+
+Faster Builds
+-Docker reuses unchanged layers (cache)
+ Smaller Storage
+-Same layers shared between images
+ Faster Deployment
+-Only missing layers are downloaded
+
+
+
+
