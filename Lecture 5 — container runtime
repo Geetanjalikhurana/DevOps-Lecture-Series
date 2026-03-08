@@ -1,0 +1,33 @@
+A container runtime is the software responsible for creating, starting, stopping, and managing containers on a host system. 
+It acts as the execution engine that turns a container image into a running container.
+In simple words:
+“Container runtime is what actually runs containers.”
+Need og container Runtime
+A container image is just a read-only package (application + dependencies).
+To run it, the system needs a runtime to:
+Create an isolated environment
+Apply resource limits
+Start the application process
+Monitor and stop it when required
+Types of Container Runtimes:
+
+1. High-Level Runtimes
+Used by users and DevOps tools.
+Docker Engine
+containerd
+CRI-O (Kubernetes-focused)
+These handle:
+Image pulling
+Networking
+Storage
+Container lifecycle
+
+2. Low-Level Runtimes
+Responsible for actually running the container process.
+runc (OCI-compliant)
+
+These directly interact with:
+Linux kernel
+Namespaces
+cgroups
+
