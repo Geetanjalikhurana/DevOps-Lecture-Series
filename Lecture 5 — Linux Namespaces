@@ -1,0 +1,49 @@
+Namespaces are Linux kernel features that partition system resources so that processes see only what belongs to them.
+
+“Namespaces create the illusion of a separate system for each container.”
+Namespaces Used in Containers
+
+PID Namespace (Process Isolation)
+Each container has its own process tree
+Process IDs inside container start from 1
+A container cannot see host or other container processes
+
+Scenario: Web Application Container
+Suppose you run a Python-based web service inside a container.
+App (PID 1)          → main application (web server)
+ ├── worker-1        → handles client requests
+├── worker-2        → handles client requests
+└── logger          → writes logs to files/stdout
+
+2. Network Namespace
+
+Each container gets:
+-Its own IP address
+-Its own ports
+Containers can run apps on the same port without conflict
+Example:Multiple Nginx containers all listen on port 80 internally.
+Container 1: 172.17.0.2:80  → Nginx
+Container 2: 172.17.0.3:80  → Nginx
+Container 3: 172.17.0.4:80  → Nginx
+
+3. Mount Namespace
+Each container has its own filesystem view
+File changes inside container do not affect host
+
+4. UTS Namespace
+Allows each container to have its own hostname
+
+5. User Namespace (Advanced)
+Maps container users to non-root users on host
+Improves security
+
+Real-World Analogy behind Namespaces 
+
+Namespaces are like separate cabins in a train:
+-Same engine (kernel)
+-Different passengers
+-No visibility between cabins
+
+
+
+
