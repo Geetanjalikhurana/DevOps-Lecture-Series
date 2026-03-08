@@ -1,0 +1,6 @@
+volume
+docker volume create myvolume-Creates a persistent storage volume.
+docker volume ls-Lists all volumes.
+docker volume inspect myvolume-Shows volume details.
+docker volume rm myvolume-Removes a volume.
+
